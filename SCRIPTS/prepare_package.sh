@@ -33,6 +33,14 @@ svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash fe
 # ServerChan
 rm -rf feeds/luci/applications/luci-app-serverchan
 git clone -b master --depth 1 https://github.com/tty228/luci-app-serverchan.git feeds/luci/applications/luci-app-serverchan
+# Mosdns
+#svn export https://github.com/immortalwrt/packages/trunk/net/mosdns feeds/packages/net/mosdns
+#ln -sf ../../../feeds/packages/net/mosdns ./package/feeds/packages/mosdns
+#sed -i '/config.yaml/d' feeds/packages/net/mosdns/Makefile
+#sed -i '/mosdns-init-openwrt/d' feeds/packages/net/mosdns/Makefile
+svn export https://github.com/QiuSimons/openwrt-mos/trunk/mosdns package/new/mosdns
+svn export https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns package/new/luci-app-mosdns
+svn export https://github.com/QiuSimons/openwrt-mos/trunk/v2ray-geodata package/new/v2ray-geodata
 
 ### 最后的收尾工作 ###
 # Lets Fuck
