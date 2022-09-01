@@ -6,8 +6,8 @@ on:
   #       - master
   #     paths:
   #       - 'SWITCH'
-  schedule:
-    - cron: '00 00 * * 0'
+  #schedule:
+  #  - cron: '00 00 * * 0'
   watch:
     types: [started]
 
