@@ -1,4 +1,4 @@
-name: Openwrt 21.02 With Kernel-5.4
+name: Openwrt 21.02 With Kernel-5.4-1
 
 on:
   # push:
