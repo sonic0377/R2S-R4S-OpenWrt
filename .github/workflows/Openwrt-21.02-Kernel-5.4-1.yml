@@ -59,6 +59,10 @@ jobs:
         id: prepare
         run: |
           sudo chown -R runner:runner /home/runner/work/R2S-R4S-OpenWrt
+          latest_release="$(curl -s https://github.com/immortalwrt/immortalwrt/tags | grep -Eo "v[0-9\.]+\-*r*c*[0-9]*.tar.gz" | sed -n '/[2-9][0-9]/p' | sed -n 1p | sed 's/.tar.gz//g')"
+          git clone -b ${latest_release} --depth 1 https://github.com/immortalwrt/immortalwrt.git openwrt
+          echo "##[set-output name=latest_release;]$latest_release"        
+          sudo chown -R runner:runner /home/runner/work/R2S-R4S-OpenWrt
           latest_release="$(curl -s https://github.com/openwrt/openwrt/tags | grep -Eo "v[0-9\.]+\-*r*c*[0-9]*.tar.gz" | sed -n '/[2-9][0-9]/p' | sed -n 1p | sed 's/.tar.gz//g')"
           git clone --single-branch -b ${latest_release} https://github.com/openwrt/openwrt openwrt_release
           git clone --single-branch -b openwrt-21.02 https://github.com/openwrt/openwrt openwrt
@@ -78,7 +82,6 @@ jobs:
           cp -f ./openwrt_release/version ./openwrt/version
           cp -f ./openwrt_release/version.date ./openwrt/version.date
           cp -rf ./openwrt_release/target/linux/* ./openwrt/target/linux/
-          echo "##[set-output name=latest_release;]$latest_release"
       - name: Prepare Package
         run: |
           cd openwrt
