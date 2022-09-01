@@ -60,6 +60,7 @@ CONFIG_PACKAGE_luci-lib-fs=y
 CONFIG_PACKAGE_luci-lib-ipkg=y
 CONFIG_PACKAGE_miniupnpd-nftables=y
 CONFIG_PACKAGE_openssh-sftp-server=y
+CONFIG_PACKAGE_luci-app-mosdns=y
 
 ### THEME ###
 CONFIG_PACKAGE_luci-theme-argon=y
