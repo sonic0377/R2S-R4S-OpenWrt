@@ -40,7 +40,7 @@ git clone -b master --depth 1 https://github.com/tty228/luci-app-serverchan.git 
 #sed -i '/mosdns-init-openwrt/d' feeds/packages/net/mosdns/Makefile
 svn export https://github.com/QiuSimons/openwrt-mos/trunk/mosdns package/new/mosdns
 #svn export https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns package/new/luci-app-mosdns
-#svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-mosdns package/new/luci-app-mosdns
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-mosdns package/new/luci-app-mosdns
 svn export https://github.com/QiuSimons/openwrt-mos/trunk/v2ray-geodata package/new/v2ray-geodata
 
 ### 最后的收尾工作 ###
